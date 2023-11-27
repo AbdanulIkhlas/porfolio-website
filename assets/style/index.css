@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+body {
+    position: relative;
+    z-index: -999;
+    background-color: #080c11;
+    color: #EDEDED;
+    font-family: 'Hind', sans-serif;
+    padding-inline: 20px;
+}
+
+.red-text {
+    color: #e82214;
+}
+
+/*! start : style scrollbar */
+/*? Untuk WebKit (Chrome, Safari)   */
+
+::-webkit-scrollbar {
+    /*? Ukuran lebar scroll bar */
+    width: 7px;
+    height: 7px;
+
+}
+
+/*? Mengatur tampilan thumb saat dihover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff0000;
+}
+
+::-webkit-scrollbar-thumb {
+    /*? Warna scroll bar */
+    background-color: #8b0a00;
+    border-radius: 5px;
+}
+
+/*? Untuk Firefox */
+
+* {
+    /*? Ukuran lebar scroll bar */
+    scrollbar-width: thin;
+    /*? Warna scroll bar */
+    scrollbar-color: #8b0a00 transparent;
+}
+
+*::-webkit-scrollbar-track {
+    /*? Warna latar belakang track */
+    background-color: transparent;
+}
+
+
+/** end : style scrollbar  */
+/* ----------------------------------------------------------------- */
+/*! start : style header  */
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+.logo img {
+    width: 3.9rem;
+    height: 3.9rem;
+}
+
+header {
+    background-color: #0a0e14;
+    /* border-bottom: .1px solid #e82214; */
+    padding: 5px 10px;
+    display: flex;
+}
+
+header.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #0a0e1423;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    width: 100vw;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 3rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+nav ul a {
+    font-size: 14pt;
+    font-weight: 600;
+    color: #EDEDED;
+    text-decoration: none;
+    position: relative;
+}
+
+nav .menu-icon {
+    display: none;
+}
+
+/*? ----- style navbar hover */
+nav ul li a:hover {
+    color: #e82214;
+    transition: color .25s;
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e82214;
+    transform: scaleX(0);
+    transition: transform .25s;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li a::before {
+    top: -3px;
+    transform-origin: left;
+}
+
+nav ul li a::after {
+    bottom: -3px;
+    transform-origin: right;
+}
+
+nav a.active {
+    border-top: 2px solid #e82214;
+    border-bottom: 2px solid #e82214;
+    color: red;
+}
+
+/** end : style header */
+/* ----------------------------------------------------------------- */
+/*! ----- start : style main (home-section) */
+#home {
+    display: flex;
+    align-items: center;
+}
+
+#home section {
+    width: 45vw;
+    padding-inline: 20px;
+}
+
+#home section h1 {
+    font-size: 20pt;
+}
+
+#home section p {
+    font-size: 16pt;
+}
+
+section .icon {
+    margin-top: 2rem;
+    display: flex;
+    gap: 20px;
+}
+
+.insta,
+.github {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #e82214;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.insta:hover,
+.github:hover {
+    box-shadow: 0 0 10px 3px #e82214;
+    transition: .15s;
+}
+
+/** ----- end : style main (home-aside)*/
+/* ----------------------------------------------------------------- */
+/*! ----- start : style main (home-aside) */
+
+#home aside {
+    position: relative;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home aside svg {
+    position: absolute;
+    top: 3rem;
+    z-index: -99;
+    width: 100%;
+    height: 500px;
+}
+
+#home aside img {
+    width: 475.6px;
+    height: 528.6px;
+    margin-bottom: 6px;
+}
+
+.foto {
+    display: flex;
+}
+
+#home aside .garis {
+    width: 50vw;
+    height: 8px;
+    background-color: #e82214;
+    box-shadow: 0 2px 10px 3px #e82214;
+    border-radius: 3px;
+}
+
+/** ----- end : style main (home-aside)*/
+/* ----------------------------------------------------------------- */
+/*! ----- start : style main (about-aside) */
+
+#about {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+#about aside {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#about aside .background {
+    background-color: #11161dd1;
+    width: 30vw;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    box-shadow: 0 0 10px 2px #10161ed1;
+}
+
+#about aside img {
+    width: 500px;
+}
+
+/** ----- end : style main (about-aside)*/
+/* ----------------------------------------------------------------- */
+/*! ----- start : style main (about-section) */
+
+#about section {
+    width: 55vw;
+    padding: 80px;
+}
+
+#about section h1 {
+    font-size: 30pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#about section .email {
+    padding-left: 20px;
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+/** ----- end : style main (about-section)*/
+/* ----------------------------------------------------------------- */
+/*! ----- start : style main (project-section) */
+
+#project {
+    margin-top: 100px;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+#project section {
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+}
+
+#project section h1 {
+    font-size: 30pt;
+    margin-bottom: 30px;
+}
+
+#project section .container-card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 1;
+}
+
+#project section .container-card .card img {
+    width: 320px;
+    border: 2px solid white;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+#project section .container-card .card {
+    position: relative;
+    width: 25vw;
+    height: 55vh;
+    border: 1px solid white;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #1b2025;
+    box-shadow: 0 0 10px 2px #66707c;
+    overflow: hidden;
+}
+
+.card button {
+    position: absolute;
+    bottom: 30px;
+    left: 115px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #0a0e14;
+    border: 1px solid white;
+    color: white;
+    font-size: 12pt;
+    box-shadow: 3px 2px 10px 1px #000000;
+    cursor: pointer;
+}
+
+/** ----- end : style main (about-section)*/
+/* ----------------------------------------------------------------- */
+/*! ----- start : style footer */
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    font-size: 12pt;
+    font-weight: bold;
+    background-color: #11161dd1;
+    text-align: center;
+    line-height: 8vh;
+}
+
+
+/** ----- end : style footer/
+
+
+
+
+
+
+
+
+
+/*! ---- Responsive @media ----  */
+@media screen and (max-width: 480px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    main article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*! start : style scrollbar */
+    /*? Untuk WebKit (Chrome, Safari)   */
+
+    ::-webkit-scrollbar {
+        /*? Ukuran lebar scroll bar */
+        width: 1px;
+        height: 1px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        /*? Warna scroll bar */
+        background-color: #e82214;
+    }
+
+    /*? Untuk Firefox */
+
+    * {
+        /*? Ukuran lebar scroll bar */
+        scrollbar-width: thin;
+        /*? Warna scroll bar */
+        scrollbar-color: #e82214 transparent;
+    }
+
+    *::-webkit-scrollbar-track {
+        /*? Warna latar belakang track */
+        background-color: transparent;
+    }
+
+
+    /** end : style scrollbar  */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style header -----  */
+    header {
+        background-color: #0a0e14;
+        width: 100%;
+    }
+
+    nav {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: flex-end;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        flex-direction: column;
+        width: 200px;
+        z-index: 99;
+        display: none;
+    }
+
+    nav .menu-icon {
+        display: flex;
+        font-size: 30pt;
+        cursor: pointer;
+    }
+
+    nav ul.active {
+        background-color: #080c11;
+        border: 1px solid white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+
+
+    /** ----- end : style header ----- */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style home (aside) ----- */
+    #home aside {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    #home aside svg {
+        top: 1rem;
+    }
+
+    #home aside img {
+        width: 375.6px;
+        height: 428.6px;
+    }
+
+    #home aside .garis {
+        width: 80vw;
+    }
+
+    /** end : style home (aside) */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style home (section) ----- */
+    #home section {
+        width: 80vw;
+        padding-block: 10px;
+        margin-bottom: 20px;
+    }
+
+    /** end : style home (section) */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style about (aside) ----- */
+
+    #about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+
+    #about aside {
+        width: 100vw;
+    }
+
+    #about aside .background {
+        width: 100%;
+    }
+
+    #about aside img {
+        width: 375.6px;
+    }
+
+    /** end : style about (aside) */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style about (section) ----- */
+
+    #about section {
+        width: 100vw;
+        padding: 50px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 50px;
+    }
+
+    #about section .email {
+        margin: 0;
+        padding: 0;
+    }
+
+    /** end : style about (aside) */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style project (section) ----- */
+
+    #project {
+        margin: 0;
+        height: 180vh;
+    }
+
+    #project section {
+        padding: 0;
+    }
+
+    #project section h1 {
+        margin: 0;
+    }
+
+    #project section .container-card {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 100vw;
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    #project section .container-card .card img {
+        width: 200px;
+    }
+
+    #project section .container-card .card {
+        width: 300px;
+        height: 280px;
+        font-size: 10pt;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .card button {
+        left: 70px;
+        bottom: 20px;
+        width: 150px;
+        font-size: 10pt;
+    }
+
+    .card h2 {
+        font-size: 15pt;
+        margin: 0;
+    }
+
+    /** end : style project (aside) */
+}
+
+/* -------------------------------------------------------- */
+/*! ---- Responsive @media 768px----  */
+@media screen and (max-width: 768px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*! start : style scrollbar */
+    /*? Untuk WebKit (Chrome, Safari)   */
+
+    ::-webkit-scrollbar {
+        /*? Ukuran lebar scroll bar */
+        width: 1px;
+        height: 1px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        /*? Warna scroll bar */
+        background-color: #e82214;
+    }
+
+    /*? Untuk Firefox */
+
+    * {
+        /*? Ukuran lebar scroll bar */
+        scrollbar-width: thin;
+        /*? Warna scroll bar */
+        scrollbar-color: #e82214 transparent;
+    }
+
+    *::-webkit-scrollbar-track {
+        /*? Warna latar belakang track */
+        background-color: transparent;
+    }
+
+
+    /** end : style scrollbar  */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style home ----- */
+
+    #home {
+        padding-inline: 40px;
+    }
+
+    #home aside {
+        margin-bottom: 20px;
+    }
+
+    #home aside svg {
+        top: 1rem;
+    }
+
+    #home aside img {
+        width: 375.6px;
+        height: 428.6px;
+    }
+
+    #home aside .garis {
+        width: 40vw;
+    }
+
+    #home section {
+        margin-top: 40px;
+    }
+
+    #home section h1 {
+        font-size: 15pt;
+    }
+
+    #home section p {
+        font-size: 14pt;
+    }
+
+
+    /** end : style home */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style about ----- */
+
+    #about {
+        padding-inline: 40px;
+        box-sizing: border-box;
+    }
+
+    #about aside .background {
+        width: 40vw;
+    }
+
+    #about .background img {
+        width: 380px;
+    }
+
+    #about section {
+        padding: 20px;
+        margin-left: 30px;
+    }
+
+    #about section h1 {
+        margin-top: 20px;
+        font-size: 16pt;
+        text-align: center;
+    }
+
+    #about section p {
+        font-size: 11pt;
+        text-align: center;
+    }
+
+    #about section .email {
+        margin: 0;
+        margin-top: 20px;
+        display: flex;
+        margin-left: 10px;
+    }
+
+    /** end : style about */
+    /* -------------------------------------------------------- */
+    /*! ----- start : style project (section) ----- */
+
+    #project {
+        margin: 0;
+        padding-top: 50px;
+        height: 200vh;
+    }
+
+    #project section {
+        padding: 0;
+    }
+
+    #project section h1 {
+        margin: 0;
+    }
+
+    #project section .container-card {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 100vw;
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    #project section .container-card .card img {
+        width: 200px;
+    }
+
+    #project section .container-card .card {
+        width: 300px;
+        height: 280px;
+        font-size: 10pt;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .card button {
+        left: 70px;
+        bottom: 20px;
+        width: 150px;
+        font-size: 10pt;
+    }
+
+    .card h2 {
+        font-size: 15pt;
+        margin: 0;
+    }
+
+    /** end : style project (aside) */
+
+}
